@@ -26,3 +26,5 @@ C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\tetris\TetrisTemplat
 C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\tetris\TetrisTemplate\obj\x86\Debug\TetrisTemplate.csprojResolveAssemblyReference.cache
 C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\tetris\TetrisTemplate\obj\x86\Debug\Tetris.exe
 C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\tetris\TetrisTemplate\obj\x86\Debug\Tetris.pdb
+C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\github\tetris\tetris\TetrisTemplate\obj\x86\Debug\Tetris.exe
+C:\Users\thomaslaptop\Documents\Visual Studio 2015\Projects\github\tetris\tetris\TetrisTemplate\obj\x86\Debug\Tetris.pdb

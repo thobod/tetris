@@ -28,8 +28,8 @@ class GameWorld
     TetrisGrid grid;
     // lionel is knap
     // nog knapper
-    // nog veel kanpper
-
+    // adsfadsfasdf
+    
     public GameWorld(int width, int height, ContentManager Content)
     {
         screenWidth = width;

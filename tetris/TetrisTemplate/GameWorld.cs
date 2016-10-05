@@ -24,6 +24,7 @@ class GameWorld
     Texture2D block;
     GameState gameState;
     TetrisGrid grid;
+    // lionel is knap
 
     public GameWorld(int width, int height, ContentManager Content)
     {

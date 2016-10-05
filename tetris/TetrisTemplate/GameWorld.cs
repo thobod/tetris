@@ -27,6 +27,7 @@ class GameWorld
     GameState gameState;
     TetrisGrid grid;
     // lionel is knap
+    // nog knapper
 
     public GameWorld(int width, int height, ContentManager Content)
     {

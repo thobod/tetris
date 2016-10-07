@@ -26,6 +26,18 @@ class TetrisGrid
     }
     public void Clear()
     {
+        for (int x = 0; x < Width; x++) // maak alle blokken grijs
+            for (int y = 0; y < Height; y++)
+                grid[x, y] = 0;
+    }
+    public void Update()
+    {
+        grid[2, 19] = 1;
+    }
+    public void ClearLine(int y)
+    {
+        for (int x = 0; x < Width; x++)
+            grid[x, y] = 0;
     }
     public void Draw(GameTime gameTime, SpriteBatch s)
     {
@@ -52,7 +64,6 @@ class TetrisGrid
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Purple);
                 }
-
             }
     }
 }

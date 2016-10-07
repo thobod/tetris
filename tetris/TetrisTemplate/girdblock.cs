@@ -6,8 +6,6 @@ namespace Tetris
 {
     class girdblock
     {
-        Vector2 position = new Vector2();
-        
 
     }
 }

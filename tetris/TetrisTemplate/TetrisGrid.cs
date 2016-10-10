@@ -12,7 +12,9 @@ class TetrisGrid
     {
         gridblock = b;
         position = Vector2.Zero;
-        this.Clear();
+        Update();
+        ClearLine(8);
+        //this.Clear();
     }
     Texture2D gridblock;
     Vector2 position = new Vector2();
@@ -30,14 +32,29 @@ class TetrisGrid
             for (int y = 0; y < Height; y++)
                 grid[x, y] = 0;
     }
-    public void Update()
+    public void Update() //methode om te testen of clear methodes werken (niet in de final game)
     {
-        grid[2, 19] = 1;
+        grid[1, 0] = 1;
+        grid[1, 1] = 2;
+        grid[1, 2] = 1;
+        grid[1, 3] = 2;
+        grid[1, 4] = 3;
+        grid[1, 5] = 4;
+        grid[1,6] = 3;
     }
-    public void ClearLine(int y)
+    public void ClearLine(int y) // maakt de lijn met y coordinaat y leeg en schuift grid naar onder
     {
         for (int x = 0; x < Width; x++)
-            grid[x, y] = 0;
+        {
+            for (int i = y; i > 0; i--)
+            {
+                grid[x, i] = grid[x, i - 1];
+            }
+            grid[x, 0] = 0; // zet de bovenste lijn grijs na een clearline()
+        }
+            
+
+
     }
     public void Draw(GameTime gameTime, SpriteBatch s)
     {

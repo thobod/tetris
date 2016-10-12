@@ -12,9 +12,9 @@ class TetrisGrid
     {
         gridblock = b;
         position = Vector2.Zero;
-        test();
-        //Update();
-        //ClearLine(3);
+        //teststuff1();
+        drawblock(3, 4, 0); // voer in: (bloksoort, x pos, y pos)
+        //ClearLine(0);
         //this.Clear();
     }
     Texture2D gridblock;
@@ -33,30 +33,17 @@ class TetrisGrid
             for (int y = 0; y < Height; y++)
                 grid[x, y] = 0;
     }
-    public void test()
+    public void drawblock(int block, int xpos, int ypos)
     {
-        int xpos = 0;
-        int ypos = 0;
+        //block determines the kind of blosk being drawn: 0=I, 1=S, 2=Z, 3=J, 4=L, 5=T, 6=O 7=SUPRISE MF
+        //int xpos = 4;  //determines the x pos of the block being drawn
+        //int ypos = 1;  //determines the y pos of the block being drawn
         tetrisblock blok = new tetrisblock();
         for (int x = 0; x < 4; x++)
             for (int y = 0; y < 4; y++)
-                grid[x + xpos, y + ypos] = blok.tetrispieces(3, xpos, ypos);
+                grid[x + xpos, y + ypos] = blok.tetrispieces(block, x, y);
     }
-    /*public void test()
-    {
-        int xpos = 0;
-        int ypos = 0;
-        int[,]
-        T_PIECE = { { 0, 6, 0, 0 },
-                    { 6, 6, 6, 0 },
-                    { 0, 0, 0, 0 },
-                    { 0, 0, 0, 0 } };
-        for (int x = 0; x < 4; x++)
-            for (int y = 0; y < 4; y++)
-                grid[x+xpos, y+ypos] = T_PIECE[x, y];
-
-    }*/
-    public void Update() //methode om te testen of clear methodes werken (niet in de final game)
+    public void teststuff1() //methode om te testen of clear methodes werken (niet in de final game)
     {
         
         grid[1, 0] = 1;
@@ -83,37 +70,38 @@ class TetrisGrid
         for (int x = 0; x < Width; x++) // draw de blokken
             for (int y = 0; y < Height; y++)
             {
-                if (grid[x, y] == 0) // 0 = grijs
+                // drawed de blocken in wit 0 blauw 1 rood 2 groen 3 paars 4 oranje 5 cyan 6 bruin 7
+                if (grid[x, y] == 0)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.White);
                 }
-                else if (grid[x, y] == 1) // 1 = blauw 
+                else if (grid[x, y] == 1)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Blue);
                 }
-                else if (grid[x, y] == 2) // 2 = rood
+                else if (grid[x, y] == 2)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Red);
                 }
-                else if (grid[x, y] == 3) // 3 = groen
+                else if (grid[x, y] == 3)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Green);
                 }
-                else if (grid[x, y] == 4) // 4 = paars
+                else if (grid[x, y] == 4)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Purple);
                 }
-                else if (grid[x, y] == 5) // 4 = paars
+                else if (grid[x, y] == 5)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Orange);
                 }
-                else if (grid[x, y] == 6) // 4 = paars
+                else if (grid[x, y] == 6)
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.DarkCyan);
                 }
-                else if (grid[x, y] == 7) // 4 = paars
+                else if (grid[x, y] == 7)
                 {
-                    s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.LightGreen);
+                    s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Brown);
                 }
             }
     }

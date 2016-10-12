@@ -46,9 +46,14 @@ namespace Tetris
                     { 7, 7, 0, 0 },
                     { 0, 0, 0, 0 },
                     { 0, 0, 0, 0 } };
+        int[,]
+        ULTRA_PIECE = { { 1, 2, 3, 4 },
+                        { 2, 3, 4, 5 },
+                        { 3, 4, 5, 6 },
+                        { 4, 5, 6, 7 } };
         public int tetrispieces(int a, int b, int c)
         {
-            int[][,] tetrisPIECES = { I_PIECE, S_PIECE, Z_PIECE, L_PIECE, J_PIECE, T_PIECE, O_PIECE };
+            int[][,] tetrisPIECES = { I_PIECE, S_PIECE, Z_PIECE, L_PIECE, J_PIECE, T_PIECE, O_PIECE, ULTRA_PIECE };
             int d = tetrisPIECES[a][b, c];
             return d;
         }

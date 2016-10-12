@@ -25,7 +25,7 @@ class TetrisGame : Game
         
         // set the desired window size
         graphics.PreferredBackBufferWidth = 800;
-        graphics.PreferredBackBufferHeight = 800;
+        graphics.PreferredBackBufferHeight = 600;
 
         // create the input helper object
         inputHelper = new InputHelper();

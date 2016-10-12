@@ -1,19 +1,20 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Tetris;
 
 
 class TetrisGrid
 {
-    int x;
-    int y;
+    tetrisblock blok = new tetrisblock();
     int[,] grid = new int[12,20];
     public TetrisGrid(Texture2D b)
     {
         gridblock = b;
         position = Vector2.Zero;
+        test();
         //Update();
-        //ClearLine(8);
+        //ClearLine(3);
         //this.Clear();
     }
     Texture2D gridblock;
@@ -32,8 +33,32 @@ class TetrisGrid
             for (int y = 0; y < Height; y++)
                 grid[x, y] = 0;
     }
+    public void test()
+    {
+        int xpos = 0;
+        int ypos = 0;
+        tetrisblock blok = new tetrisblock();
+        for (int x = 0; x < 4; x++)
+            for (int y = 0; y < 4; y++)
+                grid[x + xpos, y + ypos] = blok.tetrispieces(3, xpos, ypos);
+    }
+    /*public void test()
+    {
+        int xpos = 0;
+        int ypos = 0;
+        int[,]
+        T_PIECE = { { 0, 6, 0, 0 },
+                    { 6, 6, 6, 0 },
+                    { 0, 0, 0, 0 },
+                    { 0, 0, 0, 0 } };
+        for (int x = 0; x < 4; x++)
+            for (int y = 0; y < 4; y++)
+                grid[x+xpos, y+ypos] = T_PIECE[x, y];
+
+    }*/
     public void Update() //methode om te testen of clear methodes werken (niet in de final game)
     {
+        
         grid[1, 0] = 1;
         grid[1, 1] = 2;
         grid[1, 2] = 1;
@@ -77,6 +102,18 @@ class TetrisGrid
                 else if (grid[x, y] == 4) // 4 = paars
                 {
                     s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Purple);
+                }
+                else if (grid[x, y] == 5) // 4 = paars
+                {
+                    s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.Orange);
+                }
+                else if (grid[x, y] == 6) // 4 = paars
+                {
+                    s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.DarkCyan);
+                }
+                else if (grid[x, y] == 7) // 4 = paars
+                {
+                    s.Draw(gridblock, position = new Vector2(x * 30, y * 30), Color.LightGreen);
                 }
             }
     }

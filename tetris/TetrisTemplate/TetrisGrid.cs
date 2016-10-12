@@ -12,8 +12,8 @@ class TetrisGrid
     {
         gridblock = b;
         position = Vector2.Zero;
-        Update();
-        ClearLine(8);
+        //Update();
+        //ClearLine(8);
         //this.Clear();
     }
     Texture2D gridblock;
@@ -52,9 +52,6 @@ class TetrisGrid
             }
             grid[x, 0] = 0; // zet de bovenste lijn grijs na een clearline()
         }
-            
-
-
     }
     public void Draw(GameTime gameTime, SpriteBatch s)
     {

@@ -10,10 +10,10 @@ class TetrisGrid
     int[,] grid = new int[12,20];
     public TetrisGrid(Texture2D b)
     {
+        Random r = new Random();
         gridblock = b;
         position = Vector2.Zero;
-        //teststuff1();
-        drawblock(3, 4, 0); // voer in: (bloksoort, x pos, y pos)
+        //drawblock(r.Next(7), 4, 0); // voer in: (bloksoort, x pos, y pos)
         //ClearLine(0);
         //this.Clear();
     }
@@ -35,24 +35,11 @@ class TetrisGrid
     }
     public void drawblock(int block, int xpos, int ypos)
     {
-        //block determines the kind of blosk being drawn: 0=I, 1=S, 2=Z, 3=J, 4=L, 5=T, 6=O 7=SUPRISE MF
-        //int xpos = 4;  //determines the x pos of the block being drawn
-        //int ypos = 1;  //determines the y pos of the block being drawn
+        //block determines the kind of blosk being drawn: 0=I, 1=S, 2=Z, 3=J, 4=L, 5=T, 6=O 7=ultrablock :P
         tetrisblock blok = new tetrisblock();
         for (int x = 0; x < 4; x++)
             for (int y = 0; y < 4; y++)
                 grid[x + xpos, y + ypos] = blok.tetrispieces(block, x, y);
-    }
-    public void teststuff1() //methode om te testen of clear methodes werken (niet in de final game)
-    {
-        
-        grid[1, 0] = 1;
-        grid[1, 1] = 2;
-        grid[1, 2] = 1;
-        grid[1, 3] = 2;
-        grid[1, 4] = 3;
-        grid[1, 5] = 4;
-        grid[1,6] = 3;
     }
     public void ClearLine(int y) // maakt de lijn met y coordinaat y leeg en schuift grid naar onder
     {

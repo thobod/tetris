@@ -6,7 +6,7 @@ class TetrisGame : Game
 {
     SpriteBatch spriteBatch;
     InputHelper inputHelper;
-    GameWorld gameWorld;
+    protected static GameWorld gameWorld;
 
     [STAThread]
     static void Main(string[] args)
@@ -16,19 +16,12 @@ class TetrisGame : Game
     }
 
     public TetrisGame()
-    {        
-        // initialize the graphics device
-        GraphicsDeviceManager graphics = new GraphicsDeviceManager(this);
-        
-        // set the directory where game assets are located
-        this.Content.RootDirectory = "Content";
-        
-        // set the desired window size
-        graphics.PreferredBackBufferWidth = 800;
+    {
+        GraphicsDeviceManager graphics = new GraphicsDeviceManager(this); // initialize the graphics device
+        this.Content.RootDirectory = "Content";// set the directory where game assets are located
+        graphics.PreferredBackBufferWidth = 800; // set the desired window size
         graphics.PreferredBackBufferHeight = 600;
-
-        // create the input helper object
-        inputHelper = new InputHelper();
+        inputHelper = new InputHelper();// create the input helper object
     }
 
     protected override void LoadContent()
@@ -52,5 +45,8 @@ class TetrisGame : Game
         GraphicsDevice.Clear(Color.White);
         gameWorld.Draw(gameTime, spriteBatch);
     }
+    public static GameWorld GameWorld
+    {
+        get { return gameWorld; }
+    }
 }
-

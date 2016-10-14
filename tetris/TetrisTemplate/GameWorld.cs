@@ -5,16 +5,14 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-// heeeehoi
 
-/*
- * A class for representing the game world.
- */
+//A class for representing the game world.
+ 
 class GameWorld
 {
-    /*
-     * enum for different game states (playing or game over)
-     */
+
+    //enum for different game states (playing or game over)
+
     enum GameState
     {
         Playing, GameOver
@@ -26,9 +24,6 @@ class GameWorld
     Texture2D block;
     GameState gameState;
     TetrisGrid grid;
-    // lionel is knap
-    // nog knapper
-    // nog veel kanpper
 
     public GameWorld(int width, int height, ContentManager Content)
     {
@@ -52,6 +47,7 @@ class GameWorld
 
     public void Update(GameTime gameTime)
     {
+        
     }
 
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -62,9 +58,7 @@ class GameWorld
             
     }
 
-    /*
-     * utility method for drawing text on the screen
-     */
+     //utility method for drawing text on the screen
     public void DrawText(string text, Vector2 positie, SpriteBatch spriteBatch)
     {
         spriteBatch.DrawString(font, text, positie, Color.Blue);
@@ -74,4 +68,5 @@ class GameWorld
     {
         get { return random; }
     }
+
 }
